@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="昨天第天一搭好博客，匆匆忙忙的把之前的笔记全放上去，今天开始比较详细化的博客。。。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-22T15:17:15.054Z">
+<meta property="og:updated_time" content="2018-07-22T15:19:28.192Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FragmentBestPractice">
 <meta name="twitter:description" content="昨天第天一搭好博客，匆匆忙忙的把之前的笔记全放上去，今天开始比较详细化的博客。。。">
@@ -301,11 +301,11 @@
 
       
         <p>昨天第天一搭好博客，匆匆忙忙的把之前的笔记全放上去，今天开始比较详细化的博客。。。<br><a id="more"></a></p>
-<p>#简易版的新闻应用要点<br>[TOC]</p>
-<p>###新闻内容页面碎片：<br>NewsContentFragment的类及其布局。（布局随意有内容即可）<br>先来看看NewsContentFragment的代码：</p>
+<h1 id="简易版的新闻应用要点"><a href="#简易版的新闻应用要点" class="headerlink" title="简易版的新闻应用要点"></a>简易版的新闻应用要点</h1><p>[TOC]</p>
+<h3 id="新闻内容页面碎片："><a href="#新闻内容页面碎片：" class="headerlink" title="新闻内容页面碎片："></a>新闻内容页面碎片：</h3><p>NewsContentFragment的类及其布局。（布局随意有内容即可）<br>先来看看NewsContentFragment的代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class NewsContentFragment extends Fragment &#123;</span><br><span class="line"></span><br><span class="line">    private View view;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public View onCreateView(LayoutInflater inflater, ViewGroup container,</span><br><span class="line">                             Bundle savedInstanceState) &#123;</span><br><span class="line">        view = inflater.inflate(R.layout.news_content_frag, container, false);</span><br><span class="line">        return view;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void refresh(String newsTitle, String newsContent) &#123;</span><br><span class="line">        View visibilityLayout = view.findViewById(R.id.visibility_layout);</span><br><span class="line">        visibilityLayout.setVisibility(View.VISIBLE);</span><br><span class="line">        TextView newsTitleText = (TextView) view.findViewById (R.id.news_title);</span><br><span class="line">        TextView newsContentText = (TextView) view.findViewById(R.id.news_content);</span><br><span class="line">        newsTitleText.setText(newsTitle); // 刷新新闻的标题</span><br><span class="line">        newsContentText.setText(newsContent); // 刷新新闻的内容</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>|- 覆写onCreateView()方法<br>    |- 创建refresh()类接受新闻内容的两个参数（title 和content）的数据<br>    因此后面的添加新闻内容必须用到refresh()方法。</p>
-<p>###新闻标题页面碎片<br>判断是不是两个碎片在一个活动中（即news_content_layout碎片是否在同一布局下）：</p>
+<h3 id="新闻标题页面碎片"><a href="#新闻标题页面碎片" class="headerlink" title="新闻标题页面碎片"></a>新闻标题页面碎片</h3><p>判断是不是两个碎片在一个活动中（即news_content_layout碎片是否在同一布局下）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">private boolean isTwoPane = false;</span><br><span class="line"></span><br><span class="line"> @Override</span><br><span class="line">    public void onActivityCreated(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onActivityCreated(savedInstanceState);</span><br><span class="line">        if (getActivity().findViewById(R.id.news_content_layout) != null) &#123;</span><br><span class="line">            isTwoPane = true; // 可以找到news_content_layout布局时，为双页模式</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            isTwoPane = false; // 找不到news_content_layout布局时，为单页模式</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>|——————若为单页则开启新的一个活动，名为<strong>NewsContentActivity</strong><br>·布局：布局是对应的NewsContentfragment，<br>·启动方式：在adapter适配器的view点击事件中actionStart()方法启动<br>·传参方法：传入的两个新闻内容参数在NewsContentActivity的onCreate()方法中取得并设置对应值。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NewsContentActivity.actionStart(getActivity(),news.getTitle(),news.getContent());</span><br></pre></td></tr></table></figure>
@@ -404,8 +404,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -456,6 +465,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简易版的新闻应用要点"><span class="nav-number">1.</span> <span class="nav-text">简易版的新闻应用要点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新闻内容页面碎片："><span class="nav-number">1.0.1.</span> <span class="nav-text">新闻内容页面碎片：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新闻标题页面碎片"><span class="nav-number">1.0.2.</span> <span class="nav-text">新闻标题页面碎片</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
