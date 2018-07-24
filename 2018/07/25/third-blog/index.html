@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="碎片化处理," />
+  <meta name="keywords" content="note," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="昨天第天一搭好博客，匆匆忙忙的把之前的笔记全放上去，今天开始比较详细化的博客。。。">
-<meta name="keywords" content="碎片化处理">
+<meta name="description" content="坚持写一下哪怕是一点点也是好的。。还行">
+<meta name="keywords" content="note">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FragmentBestPractice">
-<meta property="og:url" content="http://yoursite.com/2018/07/22/FragmentBestPractice/index.html">
+<meta property="og:title" content="third-blog">
+<meta property="og:url" content="http://yoursite.com/2018/07/25/third-blog/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="昨天第天一搭好博客，匆匆忙忙的把之前的笔记全放上去，今天开始比较详细化的博客。。。">
+<meta property="og:description" content="坚持写一下哪怕是一点点也是好的。。还行">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-22T15:19:28.192Z">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/third-blog/20170814144100114.png">
+<meta property="og:updated_time" content="2018-07-24T16:26:49.127Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FragmentBestPractice">
-<meta name="twitter:description" content="昨天第天一搭好博客，匆匆忙忙的把之前的笔记全放上去，今天开始比较详细化的博客。。。">
+<meta name="twitter:title" content="third-blog">
+<meta name="twitter:description" content="坚持写一下哪怕是一点点也是好的。。还行">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/25/third-blog/20170814144100114.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/22/FragmentBestPractice/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/25/third-blog/"/>
 
 
 
 
 
-  <title>FragmentBestPractice | Hexo</title>
+  <title>third-blog | Hexo</title>
   
 
 
@@ -233,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/22/FragmentBestPractice/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/25/third-blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -250,7 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">FragmentBestPractice</h1>
+          <h1 class="post-title" itemprop="name headline">third-blog</h1>
         
 
         <div class="post-meta">
@@ -262,8 +264,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-22T22:24:13+08:00">
-                2018-07-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-25T00:22:11+08:00">
+                2018-07-25
               </time>
             
 
@@ -300,21 +302,28 @@
       
 
       
-        <p>昨天第天一搭好博客，匆匆忙忙的把之前的笔记全放上去，今天开始比较详细化的博客。。。<br><a id="more"></a></p>
-<h1 id="简易版的新闻应用要点"><a href="#简易版的新闻应用要点" class="headerlink" title="简易版的新闻应用要点"></a>简易版的新闻应用要点</h1><p>[TOC]</p>
-<h3 id="新闻内容页面碎片："><a href="#新闻内容页面碎片：" class="headerlink" title="新闻内容页面碎片："></a>新闻内容页面碎片：</h3><p>NewsContentFragment的类及其布局。（布局随意有内容即可）<br>先来看看NewsContentFragment的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class NewsContentFragment extends Fragment &#123;</span><br><span class="line"></span><br><span class="line">    private View view;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public View onCreateView(LayoutInflater inflater, ViewGroup container,</span><br><span class="line">                             Bundle savedInstanceState) &#123;</span><br><span class="line">        view = inflater.inflate(R.layout.news_content_frag, container, false);</span><br><span class="line">        return view;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void refresh(String newsTitle, String newsContent) &#123;</span><br><span class="line">        View visibilityLayout = view.findViewById(R.id.visibility_layout);</span><br><span class="line">        visibilityLayout.setVisibility(View.VISIBLE);</span><br><span class="line">        TextView newsTitleText = (TextView) view.findViewById (R.id.news_title);</span><br><span class="line">        TextView newsContentText = (TextView) view.findViewById(R.id.news_content);</span><br><span class="line">        newsTitleText.setText(newsTitle); // 刷新新闻的标题</span><br><span class="line">        newsContentText.setText(newsContent); // 刷新新闻的内容</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>|- 覆写onCreateView()方法<br>    |- 创建refresh()类接受新闻内容的两个参数（title 和content）的数据<br>    因此后面的添加新闻内容必须用到refresh()方法。</p>
-<h3 id="新闻标题页面碎片"><a href="#新闻标题页面碎片" class="headerlink" title="新闻标题页面碎片"></a>新闻标题页面碎片</h3><p>判断是不是两个碎片在一个活动中（即news_content_layout碎片是否在同一布局下）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">private boolean isTwoPane = false;</span><br><span class="line"></span><br><span class="line"> @Override</span><br><span class="line">    public void onActivityCreated(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onActivityCreated(savedInstanceState);</span><br><span class="line">        if (getActivity().findViewById(R.id.news_content_layout) != null) &#123;</span><br><span class="line">            isTwoPane = true; // 可以找到news_content_layout布局时，为双页模式</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            isTwoPane = false; // 找不到news_content_layout布局时，为单页模式</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>|——————若为单页则开启新的一个活动，名为<strong>NewsContentActivity</strong><br>·布局：布局是对应的NewsContentfragment，<br>·启动方式：在adapter适配器的view点击事件中actionStart()方法启动<br>·传参方法：传入的两个新闻内容参数在NewsContentActivity的onCreate()方法中取得并设置对应值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NewsContentActivity.actionStart(getActivity(),news.getTitle(),news.getContent());</span><br></pre></td></tr></table></figure>
-<p>注：getActivity()从NewsTitleFragment碎片取得当前活动对象从而可以进行actionStart()方法的活动转换</p>
+        <p>坚持写一下哪怕是一点点也是好的。。还行<br><a id="more"></a></p>
+<h2 id="RecyclerView中界面的刷新"><a href="#RecyclerView中界面的刷新" class="headerlink" title="RecyclerView中界面的刷新"></a>RecyclerView中界面的刷新</h2><p>RecyclerView的<code>scrollToPosition(position: int)</code>可以将recyclerVIew对象定位到最后(xxList.size())一行</p>
+<p>Adapter类的方法：</p>
+<p>在RecyclerView.Adapter中，平时我们刷新的方法是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`notifyDataSetChanged()`</span><br></pre></td></tr></table></figure>
+<p>其实 ，RecyclerView.<strong>Adapter</strong>中为我们提供了很多自带酷炫的增加删除动画，包括局部刷新的方法。<br><img src="./20170814144100114.png" alt="Alt text"><br>·<strong>notifyItemInserted(int position)</strong>: 列表position位置添加一条数据时可以调用，伴有动画效果</p>
+<p>·notifyItemRemoved(int position) :列表position位置移除一条数据时调用，伴有动画效果</p>
+<p>·notifyItemMoved(int fromPosition, int toPosition) 列表fromPosition位置的数据移到toPosition位置时调用，伴有动画效果</p>
+<p>·notifyItemRangeChanged(int positionStart, int itemCount) 列表从positionStart位置到itemCount数量的列表项进行数据刷新</p>
+<p>·notifyItemRangeInserted(int positionStart, int itemCount) 列表从positionStart位置到itemCount数量的列表项批量添加数据时调用，伴有动画效果</p>
+<p>·notifyItemRangeRemoved(int positionStart, int itemCount) 列表从positionStart位置到itemCount数量的列表项批量删除数据时调用，伴有动画效果</p>
 <hr>
-<p>|——————若为双页则在<strong>MainActivity</strong>的布局中设置1:3的两个碎片屏占比<br>·布局：1:3的NewsTitleFragment：NewsContentFragment 比例<br>·启动：在adapter适配器的点击view事件中然后调用取得的NewsContentFragment对象的refresh()方法配置数据并刷新页面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NewsContentFragment newsContentFragment = (NewsContentFragment)</span><br><span class="line">         getFragmentManager().findFragmentById(R.id.news_content_fragment);</span><br><span class="line">newsContentFragment.refresh(news.getTitle(), news.getContent());</span><br></pre></td></tr></table></figure>
-<p>注：从一个碎片取得另一个碎片<strong>getFragmentManager().findFragmentById(……)</strong>获得<strong>NewsContentFragment</strong>对象</p>
-
+<h2 id="启动页的设计中"><a href="#启动页的设计中" class="headerlink" title="启动页的设计中:"></a>启动页的设计中:</h2><p>这一块似乎要用到<strong>handler</strong>这个东西，message也不造是啥。看了下疯狂android讲义完全不懂，先上网了解了个大概。。。。</p>
+<h3 id="UI设计的各种用法"><a href="#UI设计的各种用法" class="headerlink" title="UI设计的各种用法"></a>UI设计的各种用法</h3><p>|-getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);  //隐藏状态栏</p>
+<p>|-getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);  //隐藏状态栏</p>
+<p>|-getSupportActionBar().hide();//隐藏标题栏</p>
+<h3 id="消息类（Message）"><a href="#消息类（Message）" class="headerlink" title="消息类（Message）"></a>消息类（Message）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arg1 int类型 用来存放整型数据</span><br><span class="line">arg2 int类型 用来存放整型数据</span><br><span class="line">what int类型 用来保存消息标示</span><br><span class="line">obj Object类型 是Object类型的任意对象</span><br><span class="line">replyTo Messager类型 用来指定此Message发送到何处的可选Message对象</span><br></pre></td></tr></table></figure>
+<h3 id="消息处理类（Handler）"><a href="#消息处理类（Handler）" class="headerlink" title="消息处理类（Handler）"></a>消息处理类（Handler）</h3><p>–简单了解一下概念。。。。</p>
+<p>1.Handler是什么？为什么要使用Handler呢？<br>它是一个可以实现多线程间切换的类，那我们为什么要在使用多线程呢？因为Android中会有一些耗时操作，系统推荐将这些耗时的操作放到后台线程运行，否则可能造成Android的ANR（手机的无响应），但运行结束后得到相应的结果有时我们需要操作UI，而UI线程却只能在UI线程（主线程）进行操作，这个时候我们就需要从后台线程切换到UI线程，进行相应的UI更新，此时Handler就派上了用场。</p>
+<p>作者：Gzw丶Durian<br>链接：<a href="https://www.jianshu.com/p/151e8b066600" target="_blank" rel="noopener">https://www.jianshu.com/p/151e8b066600</a><br>來源：简书</p>
+<p>简单运用：启动页两秒停留</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Handler handler = new Handler();</span><br><span class="line">        handler.postDelayed(new Runnable()&#123;</span><br><span class="line">            public void run()&#123;</span><br><span class="line">                try&#123;</span><br><span class="line">                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);</span><br><span class="line">                    startActivity(intent);</span><br><span class="line">                    finish();</span><br><span class="line">                &#125; catch (Exception e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,2000);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -331,7 +340,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/碎片化处理/" rel="tag"># 碎片化处理</a>
+            <a href="/tags/note/" rel="tag"># note</a>
           
         </div>
       
@@ -344,8 +353,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/21/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/07/22/FragmentBestPractice/" rel="next" title="FragmentBestPractice">
+                <i class="fa fa-chevron-left"></i> FragmentBestPractice
               </a>
             
           </div>
@@ -353,10 +362,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/25/third-blog/" rel="prev" title="third-blog">
-                third-blog <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -479,7 +484,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简易版的新闻应用要点"><span class="nav-number">1.</span> <span class="nav-text">简易版的新闻应用要点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新闻内容页面碎片："><span class="nav-number">1.0.1.</span> <span class="nav-text">新闻内容页面碎片：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新闻标题页面碎片"><span class="nav-number">1.0.2.</span> <span class="nav-text">新闻标题页面碎片</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RecyclerView中界面的刷新"><span class="nav-number">1.</span> <span class="nav-text">RecyclerView中界面的刷新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动页的设计中"><span class="nav-number">2.</span> <span class="nav-text">启动页的设计中:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UI设计的各种用法"><span class="nav-number">2.1.</span> <span class="nav-text">UI设计的各种用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息类（Message）"><span class="nav-number">2.2.</span> <span class="nav-text">消息类（Message）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息处理类（Handler）"><span class="nav-number">2.3.</span> <span class="nav-text">消息处理类（Handler）</span></a></li></ol></li></ol></div>
             
 
           </div>
