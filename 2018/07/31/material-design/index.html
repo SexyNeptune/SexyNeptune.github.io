@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="UI," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这一个星期似乎只记了那么一些知识点，重要的应该还是记在我的脑子里面的嘻嘻嘻。。。">
+<meta name="keywords" content="UI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="material_design">
+<meta property="og:url" content="http://yoursite.com/2018/07/31/material-design/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这一个星期似乎只记了那么一些知识点，重要的应该还是记在我的脑子里面的嘻嘻嘻。。。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-31T15:54:15.252Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="material_design">
+<meta name="twitter:description" content="这一个星期似乎只记了那么一些知识点，重要的应该还是记在我的脑子里面的嘻嘻嘻。。。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/31/material-design/"/>
+
+
+
+
+
+  <title>material_design | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/31/material-design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">material_design</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-31T23:45:35+08:00">
+                2018-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这一个星期似乎只记了那么一些知识点，重要的应该还是记在我的脑子里面的嘻嘻嘻。。。<br><a id="more"></a></p>
+<h3 id="Timer类："><a href="#Timer类：" class="headerlink" title="Timer类："></a><strong>Timer类：</strong></h3><p>根据是否循环执行分为两类：</p>
+<pre><code>//只执行一次
+public void schedule(TimerTask task, long delay);
+public void schedule(TimerTask task, Date time);
+
+//循环执行
+// 在循环执行类别中根据循环时间间隔又可以分为两类
+public void schedule(TimerTask task, long delay, long period) ;
+public void schedule(TimerTask task, Date firstTime, long period) ;
+
+
+public void scheduleAtFixedRate(TimerTask task, long delay, long period)
+public void scheduleAtFixedRate(TimerTask task, Date firstTime, long period)
+</code></pre><p><strong>Timertask对象的本质就是启动一条新线程</strong></p>
+<p>在toolbar中，</p>
+<h3 id="android-windowSoftInputMode"><a href="#android-windowSoftInputMode" class="headerlink" title="android:windowSoftInputMode"></a>android:windowSoftInputMode</h3><p>当界面上仅仅有文本和button的时候，软键盘就不会自己主动弹出。由于没有输入的必要。那么。当界面上出现了获取了焦点的输入框的时候。软键盘会不会自己主动的弹出呢？这个还真不一定！</p>
+<p>一般的，软键盘并不会自己主动弹出。 就是说。默认的，系统并不确定用户是否须要软键盘，因此不会自己主动弹出。可是，为什么说不一定呢？这是由于，假设我们在这个布局的外面，包裹上一个<strong>ScrollView</strong>，软键盘就会自己主动的弹出来了！</p>
+<p><strong>1.</strong>让界面不自己主动弹出软键盘的当中一个解决方式，就是在xml文件里。设置一个非输入框控件获取焦点，从而阻止键盘弹出。</p>
+<p><strong>2.</strong>在manifest文件里面的对应activity中添加如下一段</p>
+<pre><code>android:windowSoftInputMode=&quot;adjustPan&quot;
+</code></pre><p>假设设置为这个属性。那么Activity的屏幕大小并不会调整来保证软键盘的空间。</p>
+<h3 id="详解android-scaleType属性"><a href="#详解android-scaleType属性" class="headerlink" title="详解android:scaleType属性"></a>详解android:scaleType属性</h3><p><strong>android:scaleType</strong>是控制图片如何resized/moved来匹对ImageView的size。</p>
+<p>ImageView.ScaleType / android:scaleType值的意义区别：</p>
+<p>CENTER /<strong>center</strong>  按图片的<strong>原来size</strong>居中显示，当图片长/宽超过View的长/宽，则<strong>截取图片的居中部分显示</strong></p>
+<p>CENTER_CROP / <strong>centerCrop</strong>  按比例<strong>扩大图片的size</strong>居中显示，使得图片长(宽)等于或大于View的长(宽),将超出的部分截掉</p>
+<p>CENTER_INSIDE / <strong>centerInside</strong>  将图片的内容完整居中显示，通过按比例缩小或原来的size使得图片长/宽等于或小于View的长/宽</p>
+<p>FIT_CENTER / <strong>fitCenter</strong>  把图片按比例扩大/缩小到View的宽度，居中显示</p>
+<p>FIT_END / <strong>fitEnd</strong>   把图片按比例扩大/缩小到View的宽度，显示在View的下部分位置</p>
+<p>FIT_START / <strong>fitStart</strong>  把图片按比例扩大/缩小到View的宽度，显示在View的上部分位置</p>
+<p>FIT_XY / <strong>fitXY</strong>  把图片不按比例扩大/缩小到View的大小显示</p>
+<p>MATRIX / <strong>matrix</strong> 用矩阵来绘制，动态缩小放大图片来显示。</p>
+<h3 id="在ScrollView中嵌套RecyclerView是会出现滑动方面的问题"><a href="#在ScrollView中嵌套RecyclerView是会出现滑动方面的问题" class="headerlink" title="在ScrollView中嵌套RecyclerView是会出现滑动方面的问题"></a>在ScrollView中嵌套RecyclerView是会出现滑动方面的问题</h3><p>在禁止RecyclerView的时候会出现内容显示不全的问题，<br>针对这种情形，使用网上的方法一种是使用 RelativeLayout 包裹 RecyclerView 并设置属性：<strong>android:descendantFocusability=”blocksDescendants”</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;RelativeLayout</span><br><span class="line">     android:layout_width=&quot;match_parent&quot;</span><br><span class="line">     android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">     android:descendantFocusability=&quot;blocksDescendants&quot;&gt;</span><br><span class="line"> </span><br><span class="line">   &lt;android.support.v7.widget.RecyclerView</span><br><span class="line">      android:id=&quot;@+id/menuRv&quot;</span><br><span class="line">      android:layout_width=&quot;match_parent&quot;</span><br><span class="line">      android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">      android:layout_marginLeft=&quot;@dimen/margin_16&quot;</span><br><span class="line">      android:layout_marginRight=&quot;@dimen/margin_16&quot;/&gt;</span><br><span class="line"> &lt;/RelativeLayout&gt;</span><br></pre></td></tr></table></figure>
+<p>只要包裹一层相对布局就OK了。</p>
+<p>android:descendantFocusability=”blocksDescendants”，该属&gt;性是当一个view 获取焦点时，定义 ViewGroup 和其子控件直接的关系，常用来&gt;解决父控件的焦点或者点击事件被子空间获取。<br>属性的值有三种：</p>
+<p>|-beforeDescendants: ViewGroup会优先其子控件获取焦点<br>|-afterDescendants: ViewGroup只有当其子控件不需要获取焦点时才获取焦点<br>|-blocksDescendants: ViewGroup会覆盖子类控件而直接获得焦点</p>
+<h3 id="UI设计随记："><a href="#UI设计随记：" class="headerlink" title="UI设计随记："></a>UI设计随记：</h3><p>设置TextView的最大行数以及超过，多出的部分用省略号表示：<br> android:maxLines=”2”<br>            android:ellipsize=”end”</p>
+<p>透明色的背景：<code>&quot;#00000000&quot;</code>   全是0.。。。。或transparent</p>
+<h3 id="布局构造"><a href="#布局构造" class="headerlink" title="布局构造"></a>布局构造</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;DrawableLayout&gt;</span><br><span class="line"></span><br><span class="line">		&lt;CoodinatorLayout&gt;    //主要布局</span><br><span class="line">		</span><br><span class="line">				&lt;AppBarLayout&gt;          //标题栏工具--------     套在标题栏外层</span><br><span class="line">						&lt;ToolBar/&gt;           //标题栏     -|   </span><br><span class="line">				&lt;/AppBarLayout&gt;         //标题栏工具--------</span><br><span class="line">				</span><br><span class="line">				&lt;SwipeRefreshLayout&gt;    //下拉刷新   ------------     套在滑动控件外层</span><br><span class="line">						&lt;RecyclerView/&gt;     //RecyclerView内容  |   </span><br><span class="line">				&lt;/SwipeRefreshLayout&gt;   //下拉刷新   ------------</span><br><span class="line">				</span><br><span class="line">				&lt;FloatingActionBar/&gt;    //悬浮按钮</span><br><span class="line">				</span><br><span class="line">		&lt;/CoodinatorLayout&gt;   //主要布局</span><br><span class="line">		</span><br><span class="line">		&lt;NavtgationView/&gt;    //菜单栏		</span><br><span class="line">		</span><br><span class="line">&lt;/DrawableLayout&gt;</span><br></pre></td></tr></table></figure>
+<p>其中滑动菜单栏中的处理方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mNavigationView.setCheckedItem(R.id.nav_call);</span><br><span class="line">        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() &#123;</span><br><span class="line">            @Override  //在此方法中可以写相应的逻辑处理。。。</span><br><span class="line">            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) &#123;</span><br><span class="line">                mDrawerLayout.closeDrawer(mNavigationView);</span><br><span class="line">                return true;  </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>Snackbar：<br>类似于Toast但可以多加一个按钮事件：<br>Snackbar<br>.make(view,”语句”, Snackbar.LENGTH_SHORT)<br>.setAction(“按钮”, new View.OnclickListener(){………….})<br>.show();</p>
+<h3 id="引用库"><a href="#引用库" class="headerlink" title="引用库"></a>引用库</h3><p>‘com.android.<code>support:design</code>:24.2.1’      ———–凡是用到NavigationView，FloatingActionButton，SnackBar等都会用到<br>‘de.hdodenhof:<code>circleimageview</code>:2.1.0’  ———-取得圆形图片时用到<br>‘com.android.<code>support:cardview</code>-v7:28.0.0’    ———-  卡片布局时用到<br>‘com.github.bumptech.glide.<code>glide</code>:3.7.0’       ————  插入各种图片时引用，强大的图片加载库</p>
+<h3 id="Git时间"><a href="#Git时间" class="headerlink" title="Git时间"></a>Git时间</h3><p>git status   —–查看修改内容<br>gitd diff  ——查看更多详情<br>git checkout   ——–撤销内容变动<br>git reset + HEAD  ——–撤销到未添加状态<br>git log  ————-查看提交记录<br>git commit   ———–提交<br>git commit -m “标签”    ———添加标签</p>
+<h3 id="Notification（新版本）"><a href="#Notification（新版本）" class="headerlink" title="Notification（新版本）"></a>Notification（新版本）</h3><p>在安卓8.0中对通知系统进行了些许改变：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">NotificationChannel channel = new NotificationChannel(&quot;1&quot;,&quot;通道1&quot;,NotificationManager.IMPORTANCE_HIGH);</span><br><span class="line">                NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);</span><br><span class="line">                manager.createNotificationChannel(channel);</span><br><span class="line">                NotificationCompat.Builder builder = new NotificationCompat.Builder(this)</span><br><span class="line">                        .setContentTitle(&quot;This is content title&quot;)</span><br><span class="line">                        .setContentText(&quot;This is content text&quot;)</span><br><span class="line">                        .setWhen(System.currentTimeMillis())</span><br><span class="line">                        .setSmallIcon(R.mipmap.ic_launcher)</span><br><span class="line">                        .setLargeIcon(BitmapFactory.decodeResource(getResources(),</span><br><span class="line">                                R.mipmap.ic_launcher))</span><br><span class="line">                        .setChannelId(&quot;1&quot;);</span><br><span class="line">                manager.notify(1,builder.build());</span><br></pre></td></tr></table></figure>
+<p>为android8.0以上的添加通知渠道：之中id即ChannelId与mBuilder中setChannelId(ChannelId)相同才可正常进行通知 name为通知渠道名称 NotificationManager.IMPORTANCE_HIGH为通知重要程度不同程度可由用户在手机上自行设置</p>
+<p>可以不用加setChannelId，与书上的用法差不多，只是在NotificationCompat.Builder中需要多传入一个通知渠道ID</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">new NotificationCompat.Builder(this,channelId)</span><br><span class="line">.......</span><br><span class="line">.build();</span><br></pre></td></tr></table></figure>
+<p><strong>良好的开发的步骤</strong>：</p>
+<p><strong>1.</strong>首先在onCreate()创建相应的通知渠道：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> protected void onCreate（...）&#123;</span><br><span class="line">      String channelId =&quot;chat&quot;;</span><br><span class="line">      String channelName = &quot;聊天消息&quot;;</span><br><span class="line">      int importance = NotificationManager.IMPORTANCE_HIGH;</span><br><span class="line">      createNotificationChannel(channelId, channelName, importance);</span><br><span class="line">      channelId =&quot;subscribe&quot;;</span><br><span class="line">      channelName = &quot;订阅消息&quot;;</span><br><span class="line">      importance = NotificationManager.IMPORTANCE_DEFAULT;</span><br><span class="line">      createNotificationChannel(channelId, channelName, importance);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">private void createNotificationChannel(String channelId, String channelName, int importance) &#123;</span><br><span class="line">      NotificationChannel channel = new NotificationChannel(channelId, channelName, importance);</span><br><span class="line">      NotificationManager notificationManager = (NotificationManager) getSystemService(</span><br><span class="line">              NOTIFICATION_SERVICE);</span><br><span class="line">      notificationManager.createNotificationChannel(channel);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>创建一个通知渠道的方式非常简单，这里我封装了一个createNotificationChannel()方法，里面的逻辑相信大家都看得懂。需要注意的是，创建一个通知渠道至少需要渠道ID、渠道名称以及重要等级这三个参数，其中渠道ID可以随便定义，只要保证全局唯一性就可以。渠道名称是给用户看的，需要能够表达清楚这个渠道的用途。重要等级的不同则会决定通知的不同行为，当然这里只是初始状态下的重要等级，用户可以随时手动更改某个渠道的重要等级，App是无法干预的。</p>
+<p><strong>2.</strong>设置相应的方法触发通知</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public void sendChatMsg()&#123;</span><br><span class="line">        Intent intent = new Intent(this,NotificationActivity.class);</span><br><span class="line">        PendingIntent pi = PendingIntent.getActivity(this,0,intent,0);</span><br><span class="line">        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);</span><br><span class="line">        Notification notification = new NotificationCompat.Builder(this,&quot;chat&quot;)//一定要写入Id</span><br><span class="line">                .setContentTitle(&quot;你收到一条聊天消息&quot;)</span><br><span class="line">                .setContentText(&quot;今天中午吃什么呀？  &quot;)</span><br><span class="line">                .setWhen(System.currentTimeMillis())</span><br><span class="line">                .setSmallIcon(R.mipmap.ic_launcher)</span><br><span class="line">                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))</span><br><span class="line">                .setContentIntent(pi)</span><br><span class="line">                .setAutoCancel(true)</span><br><span class="line">                .build();</span><br><span class="line">        manager.notify(1,notification);  //这里的是每条通知填写不同的id，与channelId不是一个东西</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void sendSubscribeMsg()&#123;。。。。&#125;//和上面一样这里不详细写出，只改了通知消息和通知的id</span><br></pre></td></tr></table></figure>
+<p>之后在相应的事件中调用此方法便可发送通知。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/UI/" rel="tag"># UI</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/25/third-blog/" rel="next" title="third-blog">
+                <i class="fa fa-chevron-left"></i> third-blog
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Timer类："><span class="nav-number">1.</span> <span class="nav-text">Timer类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android-windowSoftInputMode"><span class="nav-number">2.</span> <span class="nav-text">android:windowSoftInputMode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详解android-scaleType属性"><span class="nav-number">3.</span> <span class="nav-text">详解android:scaleType属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在ScrollView中嵌套RecyclerView是会出现滑动方面的问题"><span class="nav-number">4.</span> <span class="nav-text">在ScrollView中嵌套RecyclerView是会出现滑动方面的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UI设计随记："><span class="nav-number">5.</span> <span class="nav-text">UI设计随记：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布局构造"><span class="nav-number">6.</span> <span class="nav-text">布局构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用库"><span class="nav-number">7.</span> <span class="nav-text">引用库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git时间"><span class="nav-number">8.</span> <span class="nav-text">Git时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Notification（新版本）"><span class="nav-number">9.</span> <span class="nav-text">Notification（新版本）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
